@@ -57,7 +57,6 @@ plt.savefig("fig.png")
 plt.show()
 
 
-# val_data = SYSUCDDataset(mode='val')
 val_data = GZCDDataset(mode='val')
 # val_data = LEVIRDataset(mode='val')
 val_data_loader = DataLoader(val_data, batch_size=8, shuffle=False, num_workers=4)
