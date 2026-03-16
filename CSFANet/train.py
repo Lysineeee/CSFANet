@@ -14,12 +14,10 @@ from assess import hist_sum, compute_metrics
 from index2one_hot import get_one_hot 
 from poly import adjust_learning_rate_poly
 
-# from models.ISDANet import MY_NET
-from models.LysineNet import MY_NET
+from models.CSFANet import MY_NET
 
 
 from dataload.LEVIRdataset import LEVIRDataset
-from dataload.SYSUCDdataset import SYSUCDDataset
 from dataload.GZCDDdataset import GZCDDataset
 
 
@@ -27,7 +25,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# train_data = SYSUCDDataset(mode='train')
 train_data = GZCDDataset(mode='train')
 # train_data = LEVIRDataset(mode='train')
 data_loader = DataLoader(train_data, batch_size=8, shuffle=True, num_workers=4)
@@ -86,7 +83,7 @@ config = {
 #     config=config
 # )
 
-root = r'/home/data3/liuyansong/Lysinear/ISDANet/checkpoints/GZ_CD/1st'
+root = r'./checkpoints/GZ_CD/1st'
 os.makedirs(root, exist_ok=True)
 
 net = MY_NET(2).to(device)
