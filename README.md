@@ -1,1 +1,1 @@
-Code for CSFANet
+Code for anonymous submission
