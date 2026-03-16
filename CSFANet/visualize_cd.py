@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 from index2one_hot import get_one_hot
 from dataload.GZCDDdataset import GZCDDataset
-from models.LysineNet import MY_NET
+from models.CSFANet import MY_NET
 
 
 def visualize_cd(gt, pred):
@@ -38,8 +38,8 @@ def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     # ================== 路径配置 ==================
-    weights_path = "/home/data3/liuyansong/Lysinear/ISDANet/checkpoints/GZ_CD/1st_embedding/Last_Epoch_F1_0.8859_iou0.7952_epoch_200.pth"
-    save_root = "/home/data3/liuyansong/Lysinear/ISDANet/checkpoints/GZ_CD/1st_embedding/vis"
+    weights_path = "./checkpoints/GZ_CD/1st_embedding/Last_Epoch.pth"
+    save_root = "./checkpoints/GZ_CD/1st_embedding/vis"
     os.makedirs(save_root, exist_ok=True)
 
     # ================== 数据 ==================
