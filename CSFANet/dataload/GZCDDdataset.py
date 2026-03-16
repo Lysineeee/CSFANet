@@ -8,7 +8,7 @@ import torchvision.transforms.functional as tf
 import re
 from pathlib import Path
 
-root_path = '/home/data3/liuyansong/Lysinear/Datasets/CD_Data_GZ_256_split'
+root_path = './Datasets/CD_Data_GZ_256_split'
 def natural_sort_key(s):
     return [int(text) if text.isdigit() else text.lower() for text in re.split('(\d+)', str(s))]
 
