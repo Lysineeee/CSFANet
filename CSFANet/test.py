@@ -12,12 +12,10 @@ from assess import hist_sum, compute_metrics
 from index2one_hot import get_one_hot 
 from poly import adjust_learning_rate_poly
 
-# from models.ISDANet import MY_NET
-from models.LysineNet import MY_NET
+from models.CSFANet import MY_NET
 
 
 from dataload.LEVIRdataset import LEVIRDataset
-from dataload.SYSUCDdataset import SYSUCDDataset
 from dataload.GZCDDdataset import GZCDDataset
 
 
@@ -26,7 +24,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# test_data = SYSUCDDataset(mode='test')
 test_data = GZCDDataset(mode='test')
 # test_data = LEVIRDataset(mode='test')
 test_data_loader = DataLoader(test_data, batch_size=8, shuffle=False, num_workers=4)
@@ -36,8 +33,8 @@ n_class = 2
 F1_max = 0.85
 device = "cuda"
 
-root = '/home/data3/liuyansong/Lysinear/ISDANet/checkpoints/GZ_CD/1st_embedding/'
-weights_path = "/home/data3/liuyansong/Lysinear/ISDANet/checkpoints/GZ_CD/1st_embedding/Last_Epoch_F1_0.8859_iou0.7952_epoch_200.pth"
+root = './checkpoints/GZ_CD/1st_embedding/'
+weights_path = "./checkpoints/GZ_CD/1st_embedding/Last_Epoch.pth"
 
 net = MY_NET(2)
 net.load_state_dict(torch.load(weights_path, map_location=device))
