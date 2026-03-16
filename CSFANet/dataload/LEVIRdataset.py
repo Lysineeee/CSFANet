@@ -8,7 +8,7 @@ import torch.utils.data
 import random
 import torchvision.transforms.functional as tf
 
-root_path = r'/home/data3/liuyansong/Lysinear/Datasets/LEVIR-CD-256'
+root_path = r'./Datasets/LEVIR-CD-256'
 
 def read_images(root):
     imgs_At = glob.glob(root + '/train/A/*.png')
