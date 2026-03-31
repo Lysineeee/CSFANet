@@ -124,16 +124,6 @@ class Align(nn.Module):
         scales = [1, 2, 4, 8, 16]
         ratios = [scales[i] / scales[layer] for i in range(len(scales))]
 
-        T1[0] = self.cabm0(T1[0])
-        T1[1] = self.cabm1(T1[1])
-        T1[2] = self.cabm2(T1[2])
-        T1[3] = self.cabm3(T1[3])
-
-        T2[0] = self.cabm0(T2[0])
-        T2[1] = self.cabm1(T2[1])
-        T2[2] = self.cabm2(T2[2])
-        T2[3] = self.cabm3(T2[3])
-
         if len(self.position_embedding) == len(self.channels):
             T1[0] = T1[0] + self.position_embedding[0]
             T1[1] = T1[1] + self.position_embedding[1]
@@ -146,6 +136,15 @@ class Align(nn.Module):
             T2[3] = T2[3] + self.position_embedding[3]
             # print("position enbedded")
 
+        T1[0] = self.cabm0(T1[0])
+        T1[1] = self.cabm1(T1[1])
+        T1[2] = self.cabm2(T1[2])
+        T1[3] = self.cabm3(T1[3])
+
+        T2[0] = self.cabm0(T2[0])
+        T2[1] = self.cabm1(T2[1])
+        T2[2] = self.cabm2(T2[2])
+        T2[3] = self.cabm3(T2[3])
 
         if self.cat:
             T1_merged = torch.cat([self.align(f, ratios[i]) for i, f in enumerate(T1)], dim=1)
