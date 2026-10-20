@@ -39,7 +39,8 @@ Existing multi‑scale fusion limitations:
 ## 2. Method
 
 ### 2.1 Overall Architecture
-![CSFANet Overview](./figures/fig1_arch.png)
+<img width="1003" height="623" alt="image" src="https://github.com/user-attachments/assets/569931f0-cdb8-4320-b1d5-b2ff192873c1" />
+
 > Figure 1: Overview of the proposed CSFANet architecture.
 
 The backbone is ResNet‑18. For bi‑temporal input $T_1$, the output features from four backbone stages are:
@@ -139,7 +140,9 @@ $$
 > CSFANet gains +0.26% F1, +0.44% IoU compared with competitors on LEVIR‑CD.
 
 Visual comparison on LEVIR‑CD:
-![LEVIR‑CD Visual Result](./figures/fig2_levir_vis.png)
+
+<img width="3036" height="1499" alt="image" src="https://github.com/user-attachments/assets/43e0b34d-0c72-4cac-8c9e-4b70a08d6dc4" />
+
 > Figure 2: Visual comparisons on LEVIR‑CD dataset. White: true positives; Red: false positives; Black: true negatives; Green: false negatives.
 
 #### GZ‑CD
@@ -163,7 +166,7 @@ Visual comparison on LEVIR‑CD:
 > CSFANet gains +0.69% F1, +1.11% IoU compared with competitors on GZ‑CD (small‑sample condition).
 
 Visual comparison on GZ‑CD:
-![GZ‑CD Visual Result](./figures/fig3_gzcd_vis.png)
+<img width="3038" height="1499" alt="image" src="https://github.com/user-attachments/assets/cda78e43-b524-4479-bdd8-6f09a2cdb91c" />
 > Figure3: Visual comparisons on GZ‑CD dataset. White: true positives; Red: false positives; Black: true negatives; Green: false negatives.
 
 ### 3.4 Ablation Study
